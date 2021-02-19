@@ -1,0 +1,17 @@
+
+{{ define "main" }}
+
+    <div>
+        This is the index template.
+    </div>
+    {{ .Content }}
+{{- partial "picture-row.html" -}}
+{{- partial "abstract-row.html" -}}
+{{- partial "hr-row.html" -}}
+{{- partial "about-row.html" -}}
+{{- partial "hr-row.html" -}}
+{{- partial "contact-row.html" -}}
+
+
+
+{{ end }}
