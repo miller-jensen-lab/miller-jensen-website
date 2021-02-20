@@ -1,5 +1,6 @@
-baseURL = "http://example.org/"
+baseURL = "http://www.miller-jensen.org/"
 languageCode = "en-us"
 title = "Miller-Jensen Lab at Yale"
 theme = "miller-jensen"
+disableKinds = ["taxonomy", "term"]
 

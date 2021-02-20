@@ -1,4 +1,11 @@
 
+## How to add a new person
+
+```
+hugo new people/ilana-kelsey.md
+```
+
+Then, you can edit the file at `content/people/ilana-kelsey.md`.
 
 ## Helpful links about Hugo
 
