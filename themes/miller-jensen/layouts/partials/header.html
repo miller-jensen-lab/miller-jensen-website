@@ -1,24 +1,26 @@
 <header id="header-row">
-    <div class="row">
-        <a href="/">
-          <h1><em>Miller<span class="dash">&ndash;</span>Jensen</em> Laboratory</h1>
-          <h2>at Yale Biomedical Engineering</h2>
-        </a>
-    </div>
-    <div>
-        <ul class="nav">
-            <li {{ if .IsHome }}class="active"{{ end }}>
-                <a href="/">Home</a>
-            </li>
-            <li>
-                <a href="/people/">People</a>
-            </li>
-            <li>
-                <a href="/publications/">Publications</a>
-            </li>
-            <li>
-                <a href="/news/">News</a>
-            </li>
-        </ul>
+   <div class="container"> 
+        <div id="lab-name">
+            <a href="/">
+            <h1><em>Miller<span class="dash">&ndash;</span>Jensen</em> Laboratory</h1>
+            <h2>at Yale Biomedical Engineering</h2>
+            </a>
+        </div>
+        <div>
+            <ul class="nav">
+                <li {{ if .IsHome }}class="active"{{ end }}>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/people/">People</a>
+                </li>
+                <li>
+                    <a href="/publications/">Publications</a>
+                </li>
+                <li>
+                    <a href="/news/">News</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </header>
