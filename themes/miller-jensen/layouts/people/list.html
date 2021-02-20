@@ -1,16 +1,11 @@
-
-
 {{ define "main" }}
-<div>
-    Woot this is the list of people
-</div>
-<ul>
-    {{ range .Pages }}
-    <li>
-        <h4>{{.Params.Name}}</h4>
-        <span>{{.Params.Position}}</span>
-        {{.Content}}
-    </li>
+    <h1 class="dividing-section">Current members
+    </h2>
+    {{ range where .Site.Pages "Params.alum" false }}
+        {{- partial "person.html" . -}}
     {{ end }}
-</ul>
+    <h1 class="dividing-section">Alumni</h2>
+    {{ range where .Site.Pages "Params.alum" true }}
+        {{- partial "person.html" . -}}
+    {{ end }}
 {{ end }}

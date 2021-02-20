@@ -84,7 +84,7 @@ select {
 body {
     background-color: #fff;
     font-family: 'PT Serif', Georgia, serif;
-    font-size: 18px;
+    font-size: 1em;
     color: rgb(68, 68, 68);
     -webkit-font-smoothing: antialiased;
     padding-bottom: 72px;
@@ -94,9 +94,16 @@ body {
     }
 
     .container {
+      h3 {
+        margin-bottom: 0.5em;
+      }
       margin: 0 auto;
       display: grid;
+      column-gap: 1.5em;
       padding: 0em 1em;
+      div {
+        margin-top: 1.5em;
+      }
     }
 
     // These are the breakpoints from Bootstrap
@@ -151,7 +158,7 @@ h4,
 h5 {
     font-weight: 300;
     color: #003880;
-    font-size: 32px;
+    font-size: 1.5em;
     font-family: 'PT Sans Narrow', sans-serif;
 }
 
@@ -262,7 +269,7 @@ header {
 }
 
 #main-image-holder {
-  padding: 2em;
+  padding: 2em 0 2em 2em;
   display: none;
 }
 
@@ -276,6 +283,26 @@ p {
   padding: 1em 0;
   font-size: 1.25em;
   font-family: 'Shadows Into Light', cursive;
+  display: table-cell;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  img {
+    display: none;
+  }
+  @media (min-width:800px) {
+    img {
+      display: block;
+    }
+  }
+  img {
+    border: 0;
+  }
+  p {
+    width: 100%;
+  }
   em {
       font-style: normal;
       font-weight: 800;
@@ -352,3 +379,26 @@ img {
     box-shadow: 5px 5px 10px #bbb;
 }
 
+.person{
+  h4 {
+    line-height: 1;
+  }
+  p:first-of-type {
+    margin-top: 0.5em;
+  }
+  span.position {
+    color: #777;
+    display: block;
+    font-size: smaller;
+  }
+  img {
+    float: left;
+    margin-right: 1.5em;
+  }
+}
+
+.dividing-section {
+  margin: 1em 0 0.5em 0;
+  grid-column: 1 / -1;
+  border-bottom: 1px solid #ddd;
+}
