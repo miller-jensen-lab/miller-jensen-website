@@ -1,0 +1,16 @@
+
+
+{{ define "main" }}
+<div>
+    Woot this is the list of people
+</div>
+<ul>
+    {{ range .Pages }}
+    <li>
+        <h4>{{.Params.Name}}</h4>
+        <span>{{.Params.Position}}</span>
+        {{.Content}}
+    </li>
+    {{ end }}
+</ul>
+{{ end }}

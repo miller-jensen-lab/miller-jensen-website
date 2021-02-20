@@ -17,9 +17,10 @@
 </script>
 
 <!-- Bootstrap -->
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-<link href="/css/default.css" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Gloria+Hallelujah|PT+Sans+Narrow|PT+Serif|Shadows+Into+Light' rel='stylesheet' type='text/css'>
+{{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules/myscss")) }}
+{{ $style := resources.Get "sass/default.scss" | resources.ToCSS $options | fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
