@@ -13,7 +13,37 @@
       <em>computer science</em>.
     </p>
   </div>
-  <div class="col-md-6">
-    <img class="box-rotate-15 large-shadow hidden-xs hidden-sm" src="/static/img/macrophage.jpg" alt="todo change me">
+  <div class="col-md-6" id="main-image-holder">
+    <script>
+        const pictures = [
+                    {
+                        "src": "macrophage.jpg",
+                        "alt": "A macrophage from NIAID",
+                        "credit": "Photo from https://www.flickr.com/photos/niaid/",
+                    },
+                    {
+                        "src": "macrophage2.jpg",
+                        "alt": "A macrophage from NIAID",
+                        "credit": "Photo from https://www.flickr.com/photos/niaid/",
+                    },
+                    {
+                        "src": "macrophage3.png",
+                        "alt": "A macrophage from NIAID",
+                        "credit": "Photo from https://www.flickr.com/photos/niaid/",
+                    },
+                    {
+                        "src": "MedRF_29361.jpg",
+                        "alt": "Virus image copright MedicalRF.com",
+                        "credit": "Photo from https://www.MedicalRF.com",
+                    },
+                ];
+        const picture = pictures[Math.floor(Math.random() * pictures.length)];
+        const newImg = document.createElement("img");
+        newImg.className = 'box-rotate-15 large-shadow hidden-xs hidden-sm';
+        newImg.setAttribute('alt', picture.alt);
+        newImg.setAttribute('src', '/img/' + picture.src );
+        document.getElementById("main-image-holder").appendChild(newImg);
+
+    </script>
   </div>
 </div>
