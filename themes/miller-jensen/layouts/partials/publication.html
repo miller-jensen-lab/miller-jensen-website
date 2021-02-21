@@ -1,18 +1,32 @@
 <article>
-    {{ if isset .Params "image" }}
-        <img src="/img/publications/{{.Params.image}}" class="small-shadow">
-    {{else}}
-        {{ if isset .Params "pmid" }}
-            <img src="/img/publications/{{.Params.pmid}}.png" class="small-shadow">
+    <a href="https://google.com">
+        {{ $s := newScratch }}
+        {{ $s.Set "imgsrc" "generic-paper.png" }}
+        {{ if isset .Params "image" }}
+            {{ $s.Set "imgsrc" .Params.image }}
         {{else}}
-            <img src="/img/publications/{{.Params.pmid}}.png" class="small-shadow">
+            {{ if isset .Params "pmid" }}
+                {{ $s.Set "imgsrc" (printf "%s.png" (string .Params.pmid)) }}
+            {{end}}
         {{end}}
-    {{end}}
+        <img src="/img/publications/{{ $s.Get "imgsrc" }}" class="small-shadow">
+        {{ if .Params.is_preprint }}
+          <div class="preprint-paper small-shadow">
+            PREPRINT
+          </div>
+        {{ else  }}
+            {{ if lt (sub (now.Year) (.Params.year)) 3 }}
+                <div class="new-paper small-shadow">
+                NEW
+                </div>
+            {{ end }}
+        {{ end }}
+    </a>
     <p>
         <a href="{{.Params.fulltext_url}}">
             {{.Title}}
         </a>
-        {{.Params.authors}}
+        {{.Params.authors}},
         <b>{{.Params.journal}}</b>{{if not (strings.HasSuffix .Params.journal ".")}}.{{end}}
 
         {{ if isset .Params "vol" }}vol. {{.Params.vol}}{{end}}
@@ -24,9 +38,11 @@
         {{ if isset .Params "pmid" -}}
         <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{.Params.pmid}}">Pubmed</a> or
         {{- end -}}
+        {{ $s.Set "publisher_url" (printf "https://doi.org/%s" .Params.doi)}}
         {{ if isset .Params "fulltext_url" }}
-        at
-        <a href="{{.Params.fulltext_url}}">{{.Params.journal}}</a>.
+            {{ $s.Set "publisher_url" .Params.fulltext_url}}
         {{- end -}}
+        at
+        <a href="{{$s.Get "publisher_url"}}">{{.Params.journal}}</a>.
     </p>
 </article>

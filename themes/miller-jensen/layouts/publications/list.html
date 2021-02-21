@@ -1,7 +1,7 @@
 {{ define "main" }}
     <h1 class="dividing-section">
     </h1>
-    {{ range .Pages }}
+    {{ range (.Pages.ByParam "year").Reverse }}
         {{- partial "publication.html" . -}}
     {{ end }}
 {{ end }}
