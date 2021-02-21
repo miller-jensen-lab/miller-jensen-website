@@ -1,10 +1,10 @@
 {{ define "main" }}
     <h1 class="dividing-section">Current members
-    </h2>
+    </h1>
     {{ range where .Site.Pages "Params.alum" false }}
         {{- partial "person.html" . -}}
     {{ end }}
-    <h1 class="dividing-section">Alumni</h2>
+    <h1 class="dividing-section">Alumni</h1>
     {{ range where .Site.Pages "Params.alum" true }}
         {{- partial "person.html" . -}}
     {{ end }}

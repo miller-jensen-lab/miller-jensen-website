@@ -1,0 +1,32 @@
+<article>
+    {{ if isset .Params "image" }}
+        <img src="/img/publications/{{.Params.image}}" class="small-shadow">
+    {{else}}
+        {{ if isset .Params "pmid" }}
+            <img src="/img/publications/{{.Params.pmid}}.png" class="small-shadow">
+        {{else}}
+            <img src="/img/publications/{{.Params.pmid}}.png" class="small-shadow">
+        {{end}}
+    {{end}}
+    <p>
+        <a href="{{.Params.fulltext_url}}">
+            {{.Title}}
+        </a>
+        {{.Params.authors}}
+        <b>{{.Params.journal}}</b>{{if not (strings.HasSuffix .Params.journal ".")}}.{{end}}
+
+        {{ if isset .Params "vol" }}vol. {{.Params.vol}}{{end}}
+        {{- if isset .Params "issue" }}&nbsp;({{.Params.issue}}) {{end}}
+        {{- if isset .Params "pages" -}} {{.Params.pages}},{{- end }}
+        {{.Params.year}}.
+        {{.Params.postscript}}
+        View on
+        {{ if isset .Params "pmid" -}}
+        <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{.Params.pmid}}">Pubmed</a> or
+        {{- end -}}
+        {{ if isset .Params "fulltext_url" }}
+        at
+        <a href="{{.Params.fulltext_url}}">{{.Params.journal}}</a>.
+        {{- end -}}
+    </p>
+</article>

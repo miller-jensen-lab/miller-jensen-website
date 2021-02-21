@@ -1,0 +1,7 @@
+{{ define "main" }}
+    <h1 class="dividing-section">
+    </h1>
+    {{ range .Pages }}
+        {{- partial "publication.html" . -}}
+    {{ end }}
+{{ end }}

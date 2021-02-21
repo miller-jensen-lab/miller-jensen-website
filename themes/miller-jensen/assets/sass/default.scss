@@ -402,3 +402,14 @@ img {
   grid-column: 1 / -1;
   border-bottom: 1px solid #ddd;
 }
+
+article {
+  display: flex;
+  margin-bottom: 1.5em;
+  img {
+    float: left;
+    margin-right: 1.5em;
+    width: 97px;
+    height: 123px;
+  }
+}
