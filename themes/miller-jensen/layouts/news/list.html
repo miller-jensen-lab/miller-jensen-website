@@ -1,0 +1,14 @@
+{{ define "main" }}
+    <div class="dividing-section">
+        <h1>Latest news about the Miller-Jensen lab</h1>
+    </div>
+    {{ range where .Pages "Params.draft" false }}
+
+        <article>
+            <h4>{{.Title}}</h4>
+            <p>
+                {{.Content}}
+            </p>
+        </article>
+    {{ end }}
+{{ end }}
