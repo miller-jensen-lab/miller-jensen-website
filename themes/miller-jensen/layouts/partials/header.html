@@ -11,13 +11,13 @@
                 <li {{ if .IsHome }}class="active"{{ end }}>
                     <a href="/">Home</a>
                 </li>
-                <li>
+                <li {{if eq .CurrentSection.Title "People" }}class="active"{{end}}>
                     <a href="/people/">People</a>
                 </li>
-                <li>
-                    <a href="/publications/">Publications</a>
+                <li {{if eq .CurrentSection.Title "Publications" }}class="active"{{end}}>
+                    <a href="/publications/" >Publications</a>
                 </li>
-                <li>
+                <li {{if eq .CurrentSection.Title "News" }}class="active"{{end}}>
                     <a href="/news/">News</a>
                 </li>
             </ul>
