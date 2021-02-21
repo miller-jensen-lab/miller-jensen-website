@@ -24,9 +24,8 @@
     </a>
     <p>
         <a href="{{.Params.fulltext_url}}">
-            {{.Title}}
-        </a>
-        {{.Params.authors}},
+            {{- .Title -}}</a>{{- if not (strings.HasSuffix .Params.Title ".") -}}.{{end}}
+        {{ .Params.authors }},
         <b>{{.Params.journal}}</b>{{if not (strings.HasSuffix .Params.journal ".")}}.{{end}}
 
         {{ if isset .Params "vol" }}vol. {{.Params.vol}}{{end}}

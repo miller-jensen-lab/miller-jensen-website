@@ -1,6 +1,20 @@
 {{ define "main" }}
-    <h1 class="dividing-section">
-    </h1>
+    <div class="dividing-section">
+        <h1>Our publications</h1>
+        <p>
+            Note, sometimes our very newest publications won't appear here. You can search
+            "Miller-Jensen"
+            in
+            <a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28Miller-Jensen%5BAuthor%5D%29&sort=date&size=200">
+            Pubmed
+            </a>
+            or 
+            <a href="https://www.biorxiv.org/search/%20author1%3AMiller-Jensen%20jcode%3Abiorxiv%20numresults%3A75%20sort%3Apublication-date%20direction%3Adescending%20format_result%3Astandard">
+            BioRχiv</a>
+
+            to find them. Also, if you would like to read one of our publications and your library does not have access, please write to us for a reprint. 
+        </p>
+    </div>
     {{ range (.Pages.ByParam "year").Reverse }}
         {{- partial "publication.html" . -}}
     {{ end }}
