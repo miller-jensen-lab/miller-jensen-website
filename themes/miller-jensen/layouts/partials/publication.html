@@ -1,6 +1,10 @@
 <article class="publication">
-    <a href="https://google.com">
-        {{ $s := newScratch }}
+    {{ $s := newScratch }}
+    {{ $s.Set "publisher_url" (printf "https://doi.org/%s" .Params.doi)}}
+    {{ if isset .Params "fulltext_url" }}
+        {{ $s.Set "publisher_url" .Params.fulltext_url}}
+    {{- end -}}
+    <a href="{{$s.Get "publisher_url"}}">
         {{ $s.Set "imgsrc" "generic-paper.png" }}
         {{ if isset .Params "image" }}
             {{ $s.Set "imgsrc" .Params.image }}
@@ -38,10 +42,6 @@
         View on
         {{ if isset .Params "pmid" -}}
         <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{.Params.pmid}}">Pubmed</a> or
-        {{- end -}}
-        {{ $s.Set "publisher_url" (printf "https://doi.org/%s" .Params.doi)}}
-        {{ if isset .Params "fulltext_url" }}
-            {{ $s.Set "publisher_url" .Params.fulltext_url}}
         {{- end -}}
         at
         <a href="{{$s.Get "publisher_url"}}">{{.Params.journal}}</a>.
