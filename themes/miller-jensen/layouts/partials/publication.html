@@ -9,7 +9,9 @@
                 {{ $s.Set "imgsrc" (printf "%s.png" (string .Params.pmid)) }}
             {{end}}
         {{end}}
-        <img src="/img/publications/{{ $s.Get "imgsrc" }}" class="small-shadow">
+        {{ $rotate := index ((slice "rotate-a" "rotate-b" "rotate-c" "rotate-d") | shuffle) 0 }}
+        {{ $shadow := index ((slice "shadow-a" "shadow-b" "shadow-c" "shadow-d") | shuffle) 0 }}
+        <img src="/img/publications/{{ $s.Get "imgsrc" }}" class="{{$rotate}} {{$shadow}}">
         {{ if .Params.is_preprint }}
           <div class="preprint-paper small-shadow">
             PREPRINT
