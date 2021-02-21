@@ -1,3 +1,7 @@
+$medium-screen-break-point: 600px;
+$large-screen-break-point: 850px;
+
+
 /* Reset from https://piccalil.li/blog/a-modern-css-reset */
 /* Box sizing rules */
 *,
@@ -107,7 +111,7 @@ body {
     }
 
     // These are the breakpoints from Bootstrap
-    @media (min-width:850px) {
+    @media (min-width: $large-screen-break-point) {
       .container {
         width:80%;
         grid-template-columns: 1fr 1fr;
@@ -249,7 +253,7 @@ header {
         border-radius: 2px 2px 0 0;
         color: #428bca;
         padding: 0.5em;
-        @media (min-width:768px) {
+        @media (min-width:$medium-screen-break-point) {
           padding: 0.5em 1em 0.75em 1em;
         }
       }
@@ -265,14 +269,19 @@ header {
       }
     }
   }
-
-  @media (min-width: 400px) {
-  }
-
 }
 
 #lab-name {
-  margin-bottom: 2em;
+  vertical-align: middle;
+  margin-bottom: 1em;
+  @media (min-width:$medium-screen-break-point) {
+    text-align: center;
+    margin-bottom: 2.5em;
+    a {
+      display: block;
+      width: 100%;
+    }
+  }
 }
 
 #lab-description {
@@ -312,7 +321,7 @@ p {
   img {
     display: none;
   }
-  @media (min-width:800px) {
+  @media (min-width:$large-screen-break-point) {
     img {
       display: block;
     }
@@ -522,7 +531,7 @@ article.publication {
       display: none;
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: $large-screen-break-point) {
       div.new-paper,
       div.preprint-paper {
           display: block;
