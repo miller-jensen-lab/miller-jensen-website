@@ -115,6 +115,26 @@ body {
         padding: 0;
         max-width: 1170px;
       }
+      .container.news {
+        grid-template-columns: 1fr;
+
+        article {
+          border-bottom: 1px solid #efefef;
+          margin-top: 1.5em;
+          time {
+            display:block;
+            color: #aaa;
+            font-size: smaller;
+          }
+          h4 {
+            line-height: 1.2;
+            font-size: 1.2em;
+          }
+          p {
+            padding-top: 0.5em;
+          }
+        }
+      }
       #main-image-holder {
         display:block;
       }
@@ -523,5 +543,11 @@ article.publication {
           border: 1px solid #89C315;
           text-shadow: #578401 0px -1px 1px;
       }
+  }
+}
+
+li.news {
+  time {
+    color: #aaa;
   }
 }

@@ -40,8 +40,12 @@
   </div>
   <div>
     <h3>Lab News</h3>
-    todo add news
-    <p>
-    news
-    </p>
+    <ul>
+    {{- range (first 15 (where (where $.Site.RegularPages "Section" "news") "Params.draft" false))}}
+      <li class="news">
+        <a href="/news#{{.File.BaseFileName}}">{{.Title}}</a>
+        <time>{{ dateFormat "Monday, Jan 2, 2006" .Date }}</time>
+      </li>
+    {{ end }}
+    </ul>
   </div>

@@ -5,10 +5,12 @@
     {{ range where .Pages "Params.draft" false }}
 
         <article>
-            <h4>{{.Title}}</h4>
-            <p>
-                {{.Content}}
-            </p>
+            <h4><a name="{{.File.BaseFileName}}">{{.Title}}</a>
+            <time>
+                {{ dateFormat "Monday, Jan 2, 2006" .Date }}
+            </time>
+            </h4>
+            {{.Content}}
         </article>
     {{ end }}
 {{ end }}
