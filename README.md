@@ -11,17 +11,17 @@ generator](https://www.netlify.com/blog/2020/04/14/what-is-a-static-site-generat
 That means it takes some files and then turns those files into HTML, CSS,
 images and everything else for your website. In our case, the source files are
 kept in this repository and the build files, the output, is kept in
-[miller-jensen-lab/miller-jensen-website-build](miller-jensen-lab/miller-jensen-website-build).
+[miller-jensen-lab/miller-jensen-lab.github.io](miller-jensen-lab/miller-jensen-lab.github.io).
 
 There are three kinds of content on this website: people, publications, and
 news.  You can see a directory for each of these in the
-[content](https://github.com/miller-jensen-lab/miller-jensen-website-hugo/tree/main/content)
+[content](https://github.com/miller-jensen-lab/miller-jensen-website/tree/main/content)
 directory. Each of those directories has files inside that are in
 [Markdown](https://en.wikipedia.org/wiki/Markdown) format. (Markdown is less of
 a pain than HTML to write.) They also have so-called
 "[front-matter](https://gohugo.io/content-management/front-matter/)": a little
 bit of data about the particular item. E.g. take a look at the
-`[content/news/elise-awarded-peb-training-grant.md](https://raw.githubusercontent.com/miller-jensen-lab/miller-jensen-website-hugo/main/content/news/elise-awarded-peb-training-grant.md)`
+`[content/news/elise-awarded-peb-training-grant.md](https://raw.githubusercontent.com/miller-jensen-lab/miller-jensen-website/main/content/news/elise-awarded-peb-training-grant.md)`
 file. That looks something like as follows:
 
 ```
@@ -41,7 +41,7 @@ content and the content is in Markdown format, which mostly just looks like
 regular text 😉.
 
 The people and publication files looks similar. E.g. take a look at 
-[content/publications/2018-myofibroblast-proliferation.md](https://raw.githubusercontent.com/miller-jensen-lab/miller-jensen-website-hugo/main/content/publications/2018-myofibroblast-proliferation.md). That looks like this
+[content/publications/2018-myofibroblast-proliferation.md](https://raw.githubusercontent.com/miller-jensen-lab/miller-jensen-website/main/content/publications/2018-myofibroblast-proliferation.md). That looks like this
 
 ```
 ---
@@ -87,7 +87,7 @@ similar process for people and for publications: just copy an old one.
 
 OK, specifically, how do you do that? If  you want to create a new news item,
 go to
-[https://github.com/miller-jensen-lab/miller-jensen-website-hugo/tree/main/content/news](https://github.com/miller-jensen-lab/miller-jensen-website-hugo/tree/main/content/news)
+[https://github.com/miller-jensen-lab/miller-jensen-website/tree/main/content/news](https://github.com/miller-jensen-lab/miller-jensen-website/tree/main/content/news)
 and then click the "add file" button. Give your file a name that looks like the
 other files, something like "kathryn-wins-nobel-prize.md". (The ".md" part is
 important.) Then, put some content in there that you copied from the other
@@ -114,13 +114,13 @@ the website should be automatically updated to reflect your changes. (See
 First, clone the repo in your terminal/shell
 
 ```
-git clone git@github.com:miller-jensen-lab/miller-jensen-website-hugo.git
+git clone git@github.com:miller-jensen-lab/miller-jensen-website.git
 ```
 
 Or, if you haven't set up your ssh keys (lame 😦)
 
 ```
-git clone https://github.com/miller-jensen-lab/miller-jensen-website-hugo.git
+git clone https://github.com/miller-jensen-lab/miller-jensen-website.git
 ```
 
 Then, you'll need to [install Hugo](https://gohugo.io/getting-started/quick-start/)
@@ -128,7 +128,7 @@ on your computer. You can do that on any OS. Once you have Hugo installed, `cd`
 to the repo directory
 
 ```
-cd miller-jensen-website-hugo
+cd miller-jensen-website
 ```
 
 and run
@@ -183,7 +183,7 @@ similar to that described in [this person's blog
 post](https://medium.com/@asishrs/automate-your-github-pages-deployment-using-hugo-and-actions-518b959a51f9).
 When you push to the `main` branch of this repo on GitHub, the action will run, it will
 build the website with Hugo, and then push the resulting files to the
-[miller-jensen-website-build](miller-jensen-lab/miller-jensen-website-build)
+[miller-jensen-lab.github.io](miller-jensen-lab/miller-jensen-lab.github.io)
 repo. From there, they're served by GitHub using [GitHub Pages](https://pages.github.com/).
 
 ## Helpful links about Hugo 
