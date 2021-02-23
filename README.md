@@ -1,54 +1,169 @@
+# Miller-Jensen lab website
 
-## How to add a new person
+This is the code that generates the website for our lab at
+[https://www.miller-jensen.org](https://www.miller-jensen.org).
+
+## About this website
+
+The website is
+generated using [Hugo](https://gohugo.io/), which is a [static site
+generator](https://www.netlify.com/blog/2020/04/14/what-is-a-static-site-generator-and-3-ways-to-find-the-best-one/).
+That means it takes some files and then turns those files into HTML, CSS,
+images and everything else for your website. In our case, the source files are
+kept in this repository and the build files, the output, is kept in
+[miller-jensen-lab/miller-jensen-website-build](miller-jensen-lab/miller-jensen-website-build).
+
+There are three kinds of content on this website: people, publications, and
+news.  You can see a directory for each of these in the
+[content](https://github.com/miller-jensen-lab/miller-jensen-website-hugo/tree/main/content)
+directory. Each of those directories has files inside that are in
+[Markdown](https://en.wikipedia.org/wiki/Markdown) format. (Markdown is less of
+a pain than HTML to write.) They also have so-called
+"[front-matter](https://gohugo.io/content-management/front-matter/)": a little
+bit of data about the particular item. E.g. take a look at the
+`[content/news/elise-awarded-peb-training-grant.md](https://raw.githubusercontent.com/miller-jensen-lab/miller-jensen-website-hugo/main/content/news/elise-awarded-peb-training-grant.md)`
+file. That looks something like as follows:
 
 ```
-hugo new people/ilana-kelsey.md
+---
+title: Elise is awarded a PEB Training grant
+date: 2017-06-08T15:10:06-05:00
+draft: false
+---
+
+Elise Bullock was awarded a slot on Yale's NIH T32 Training grant supporting
+the Integrated Graduate Program in Physical and Engineering Biology.
 ```
 
-Then, you can edit the file at `content/people/ilana-kelsey.md`.
+All the stuff between the two `---` blocks is the front-matter in
+[YAML](https://en.wikipedia.org/wiki/YAML) format. The stuff below is the
+content and the content is in Markdown format, which mostly just looks like
+regular text 😉.
 
-## Adding a new publication
-
-Run 
-
-```
-hugo new publications/name-of-the-publication.md
-```
-
-Then, edit the file created in the `content/publications` directory. You'll want to
-create a "thumbnail" image too (but you don't have to---a generic paper image will
-appear if you don't make a custom thumbnail). To make the thumbnail, download a 
-PDF of the paper and then, if you're on a mac, you can do something like
+The people and publication files looks similar. E.g. take a look at 
+[content/publications/2018-myofibroblast-proliferation.md](https://raw.githubusercontent.com/miller-jensen-lab/miller-jensen-website-hugo/main/content/publications/2018-myofibroblast-proliferation.md). That looks like this
 
 ```
-sips -s format png eaar2971.full.pdf --out 30467144.png --resampleWidth 97
+---
+authors: |
+  Shook BA, Wasko RR, Rivera-Gonzalez GC, Salazar-Gatzimas E,
+  López-Giráldez F, Dash BC, Muñoz-Rojas AR, Aultman KD, Zwick
+  RK, Lei V, Arbiser JL, Miller-Jensen K, Clark DA, Hsia HC, Horsley V.
+doi: 10.1126/science.aar2971
+journal: Science
+pmid: 30467144
+title: |
+  Myofibroblast proliferation and heterogeneity are supported by macrophages 
+  during skin repair
+volume: 362
+number: 6417
+year: 2018
+---
+
+No need for content here
 ```
 
-In that case `eaar2971.full.pdf` was the name of the PDF that I downloaded
-and `30467144` is the pmid of the manuscript. Then, move that file into
-the `static/img` directory.
+In the case of publications, it's pretty much all data and no content 😜.
+Anyway, you get the trend: every piece of content on the website is either
+news, people, or publications. Each piece is in its own file. Those files have
+some data and then some content. The data are in YAML format and the content
+is in Markdown format. Easy peasy.
 
-## Previewing your changes
+## Making changes to the website
 
-Run
+In order to make changes to the website you can do one of two things. You can
+either edit this content directly on GitHub (weak, but understandable for quick
+changes!) or clone the repo to your computer where you can edit it properly. To
+clone the repo, you'll need to know how to use [git](https://git-scm.com/), the
+version control system upon which GitHub is based. That's beyond the scope of
+these instructions 😜. But, I wrote a brief guide below.
+
+### Making simple changes on GitHub
+
+How can you add new content? Well, it's easy! If you want to create a new news
+item, just copy an old news item to a new file and change it's content. You'll
+want to keep the same fields, like `title`, `date` and such. You'd follow a
+similar process for people and for publications: just copy an old one.
+
+OK, specifically, how do you do that? If  you want to create a new news item,
+go to
+[https://github.com/miller-jensen-lab/miller-jensen-website-hugo/tree/main/content/news](https://github.com/miller-jensen-lab/miller-jensen-website-hugo/tree/main/content/news)
+and then click the "add file" button. Give your file a name that looks like the
+other files, something like "kathryn-wins-nobel-prize.md". (The ".md" part is
+important.) Then, put some content in there that you copied from the other
+files. (In order to view the other files, you'll want to click on "view raw",
+so that GitHub doesn't show you the rendered Markdown.) Then you'd put in your
+content like
+
+```
+---
+title: Nobel?! Congrats, Kathryn!
+date: 2018-03-23T15:14:16-05:00
+draft: false
+---
+
+We didn't expect this! 🥳🍕
+```
+
+Then "commit" your file. After you commit, if everything was well-formatted,
+the website should be automatically updated to reflect your changes. (See
+"deployment" info, below.)
+
+### Making and previewing changes on your computer
+
+First, clone the repo in your terminal/shell
+
+```
+git clone git@github.com:miller-jensen-lab/miller-jensen-website-hugo.git
+```
+
+Or, if you haven't set up your ssh keys (lame 😦)
+
+```
+git clone https://github.com/miller-jensen-lab/miller-jensen-website-hugo.git
+```
+
+Then, you'll need to [install Hugo](https://gohugo.io/getting-started/quick-start/)
+on your computer. You can do that on any OS. Once you have Hugo installed, `cd`
+to the repo directory
+
+```
+cd miller-jensen-website-hugo
+```
+
+and run
 
 ```
 hugo server -D --disableFastRender
 ```
 
-To preview your changes.
+Then, you can preview the website at [http://localhost:1313](http://localhost:1313).
+Also, as you make changes, those changes will be automatically reflected in your
+browser. Nice!
 
-## Deploying your changes
+When you're done with your changes run something like
 
-To deploy your changes, make sure you add all your new content and your changes
-to version control. Run `git status` to see what is either changed or
-untracked, then `git add` as appropriate. Then, `git commit` and finally, `git
-push origin main` after you made your commits. The "CI/CD" pipeline on GitHub
-will take care of deploying the site when you push to the main branch.
+```
+git commit -am "Update the website"
+git push origin main
+```
 
-## Helpful links about Hugo
+to push your changes up to GitHub.
+
+## Deployment
+
+The website is deployed automatically using GitHub Actions using a method
+similar to that described in [this person's blog
+post](https://medium.com/@asishrs/automate-your-github-pages-deployment-using-hugo-and-actions-518b959a51f9).
+When you push to the `main` branch of this repo on GitHub, the action will run, it will
+build the website with Hugo, and then push the resulting files to the
+[miller-jensen-website-build](miller-jensen-lab/miller-jensen-website-build)
+repo. From there, they're served by GitHub using [GitHub Pages](https://pages.github.com/).
+
+## Helpful links about Hugo 
 
 * [Creating a theme from scratch](https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/)
+* Feel free to add links here!
 
 ## Random notes
 
