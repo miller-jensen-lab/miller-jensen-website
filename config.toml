@@ -1,4 +1,4 @@
-baseURL = "http://www.miller-jensen.org/"
+baseURL = ""
 languageCode = "en-us"
 title = "Miller-Jensen Lab at Yale"
 theme = "miller-jensen"
