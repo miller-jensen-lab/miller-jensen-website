@@ -184,11 +184,13 @@ post](https://medium.com/@asishrs/automate-your-github-pages-deployment-using-hu
 When you push to the `main` branch of this repo on GitHub, the action will run, it will
 build the website with Hugo, and then push the resulting files to the
 [miller-jensen-lab.github.io](miller-jensen-lab/miller-jensen-lab.github.io)
-repo. From there, they're served by GitHub using [GitHub Pages](https://pages.github.com/).
+repo. From there, they're served by GitHub using [GitHub Pages](https://pages.github.com/)
+(see [GitHub Pages Documentation](https://docs.github.com/en/github/working-with-github-pages).)
 
 ## Helpful links about Hugo 
 
 * [Creating a theme from scratch](https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/)
+* [GitHub Pages Documentation](https://docs.github.com/en/github/working-with-github-pages)
 * Feel free to add links here!
 
 ## Random notes
