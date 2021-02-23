@@ -4,3 +4,5 @@ title = "Miller-Jensen Lab at Yale"
 theme = "miller-jensen"
 disableKinds = ["taxonomy", "term"]
 verbose = true
+relativeURLs = true
+
