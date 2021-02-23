@@ -150,6 +150,32 @@ git push origin main
 
 to push your changes up to GitHub.
 
+### Static content
+
+You'll notice that some content has images. E.g. people have pictures
+and publications have thumbnails. You can find those in the `static/img/people`
+directory and the `static/img/publications` directory. When you add a person,
+you'll want to create a picture for them and add it to that `people` directory.
+Look at the other pictures and make it roughly the same size and aspect ratio.
+(Obviously, you'll need to `git add` and `git commit` this file unless you're
+uploading straight through GitHub's website.)
+
+You can do the same for publications, but I also wrote a script that you
+can run to create the thumbnail automatically using a PDF downloaded from
+[Sci-Hub](https://sci-hub.se/). You can run this like
+
+```
+./scripts/mac-get-paper-thumbnail.sh 30704857
+```
+
+on a *Mac* and it will create a thumbnail for the publication with Pubmed ID 30704857.
+Then you can `git add`, `git commit`, etc.
+
+## Getting help
+
+When in doubt, write to [Kyle](https://som.yale.edu/faculty/kyle-jensen). It's easy 
+for me to help 👍👍👍.
+
 ## Deployment
 
 The website is deployed automatically using GitHub Actions using a method
