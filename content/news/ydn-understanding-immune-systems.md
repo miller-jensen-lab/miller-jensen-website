@@ -1,5 +1,5 @@
 ---
-title: "YDN: Yale lab observes how macrophages respond to conflicting signals"
+title: "Yale lab observes how macrophages respond to conflicting signals"
 date: 2021-03-21T15:06:28-05:00
 draft: false
 ---
