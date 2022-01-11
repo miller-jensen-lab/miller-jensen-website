@@ -16,7 +16,6 @@ if [ "$#" -ne 1  -a "$#" -ne 2 ]; then
 fi
 
 PMID="$1"
-FILE="$2"
 
 
 # Make temp file and delete it in event of crash
@@ -25,6 +24,7 @@ temp_file="$temp_dir/$PMID.pdf"
 trap "rm -rf $temp_dir" 0 2 3 15
 
 if [ "$#" -eq 2 ]; then
+    FILE="$2"
     cp "$FILE" "$temp_file"
 fi
 
