@@ -309,6 +309,10 @@ span.position {
     padding-bottom: 6px;
 }
 
+.person img {
+    max-width: 200px;
+}
+
 /*
 ******************************
     Images
