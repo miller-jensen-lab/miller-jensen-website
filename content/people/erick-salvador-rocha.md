@@ -2,7 +2,7 @@
 name: "Erick Salvador Rocha"
 alum: False
 draft: false
-position: "Graduate Student (Biomedical Engineering)"
+position: "Graduate Student (Microbiology)"
 photo: "erick-salvador-rocha.jpg"
 ---
 
