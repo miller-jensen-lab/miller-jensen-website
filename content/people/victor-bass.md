@@ -1,6 +1,6 @@
 ---
 name: "Victor Bass"
-alum: False
+alum: True
 draft: false
 position: "Postdoctoral associate (NIH/NEI)"
 photo: "victor-bass.jpg"
