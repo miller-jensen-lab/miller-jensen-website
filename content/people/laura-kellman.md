@@ -1,14 +1,11 @@
 ---
 name: "Laura Kellman"
-alum: False
+alum: True
 draft: false
-position: "Post-baccalaureate Researcher"
+position: "Graduate Student (Stanford University)"
 photo: "laura-kellman.jpg"
 ---
 
-Laura is studying the role of p38 kinase signaling in the regulation of IL-6
-following TLR stimulation. She uses both single-cell and cell-population
-approaches to understand how intercellular signaling heterogeneity translates
-to variability in cytokine secretion. Laura received her Bachelor’s degree in
-Molecular, Cellular, and Developmental Biology from Yale University.
-
+Laura was a post-baccalaurate research in the lab prior to going to graduate
+school. Laura received her Bachelor’s degree in Molecular, Cellular, and 
+Developmental Biology from Yale University.
