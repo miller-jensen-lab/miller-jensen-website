@@ -168,6 +168,12 @@ can run to create the thumbnail automatically using a PDF downloaded from
 ./scripts/mac-get-paper-thumbnail.sh 30704857
 ```
 
+Or, if you downloaded the PDF already
+
+```
+./scripts/mac-get-paper-thumbnail.sh 30704857 path-to-the-pdf.pdf
+```
+
 on a *Mac* and it will create a thumbnail for the publication with Pubmed ID 30704857.
 Then you can `git add`, `git commit`, etc.
 
