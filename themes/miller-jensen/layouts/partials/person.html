@@ -1,6 +1,6 @@
 <div class="person">
     {{if .Params.Photo}}
-    <img src="/img/people/{{.Params.Photo}}" class="small-shadow"  onerror="this.src='/img/people/generic.png'">
+    <img src="/img/people/{{.Params.Photo}}" class="small-shadow" onerror="this.style.display='none'">
     {{end}}
     <h4>{{.Params.Name}}</h4>
     <span class="position">{{.Params.Position}}</span>
