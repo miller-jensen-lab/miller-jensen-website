@@ -1,5 +1,7 @@
 <div class="person">
+    {{if .Params.Photo}}
     <img src="/img/people/{{.Params.Photo}}" class="small-shadow">
+    {{end}}
     <h4>{{.Params.Name}}</h4>
     <span class="position">{{.Params.Position}}</span>
     {{.Content}}
