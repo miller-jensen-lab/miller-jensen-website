@@ -42,7 +42,7 @@
         View on
         {{ if isset .Params "pmid" -}}
         <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{.Params.pmid}}">Pubmed</a> or
-        {{- end -}}
+        {{- end }}
         at
         <a href="{{$s.Get "publisher_url"}}">{{.Params.journal}}</a>.
     </p>
